@@ -84,7 +84,7 @@
 // };
 
 // export default SimpleCalculator;
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { evaluate } from 'mathjs';
 import './SimpleCalc.css';
 
@@ -112,7 +112,7 @@ const SimpleCalculator = () => {
     SetData(data.slice(0, -1));
   };
 
-  const handleKeyDown = (event) => {
+  const handleKeyDown = useCallback((event) => {
     const { key } = event;
     if (
       (key >= '0' && key <= '9') ||
@@ -131,14 +131,14 @@ const SimpleCalculator = () => {
     } else if (key === 'Escape') {
       handleClear();
     }
-  };
+  }, [data, handleClick, handleEqual, handleDelete, handleClear]);
 
   useEffect(() => {
     document.addEventListener('keydown', handleKeyDown);
     return () => {
       document.removeEventListener('keydown', handleKeyDown);
     };
-  }, [data, handleKeyDown]); // Added handleKeyDown to dependencies
+  }, [handleKeyDown]);
 
   return (
     <div className='body_SC'>
