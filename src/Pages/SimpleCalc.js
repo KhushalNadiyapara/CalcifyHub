@@ -131,7 +131,7 @@ const SimpleCalculator = () => {
     } else if (key === 'Escape') {
       handleClear();
     }
-  }, [data, handleClick, handleEqual, handleDelete, handleClear]);
+  }, [handleClick, handleEqual, handleDelete, handleClear]);
 
   useEffect(() => {
     document.addEventListener('keydown', handleKeyDown);
