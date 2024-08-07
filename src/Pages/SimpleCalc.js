@@ -22,7 +22,7 @@ const SimpleCalculator = () => {
   };
 
   const handleDelete = () => {
-    SetData(input.slice(0, -1));
+    SetData(data.slice(0, -1));
   };
 
   const handleKeyDown = (event) => {
