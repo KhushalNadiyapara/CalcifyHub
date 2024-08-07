@@ -91,26 +91,26 @@ import './SimpleCalc.css';
 const SimpleCalculator = () => {
   const [data, SetData] = useState('');
 
-  const handleClick = (value) => {
-    SetData(data + value);
-  };
+  const handleClick = useCallback((value) => {
+    SetData((prevData) => prevData + value);
+  }, []);
 
-  const handleClear = () => {
+  const handleClear = useCallback(() => {
     SetData('');
-  };
+  }, []);
 
-  const handleEqual = () => {
+  const handleEqual = useCallback(() => {
     try {
       const result = evaluate(data);
       SetData(result.toLocaleString('en-US'));
     } catch (error) {
       SetData('0');
     }
-  };
+  }, [data]);
 
-  const handleDelete = () => {
-    SetData(data.slice(0, -1));
-  };
+  const handleDelete = useCallback(() => {
+    SetData((prevData) => prevData.slice(0, -1));
+  }, []);
 
   const handleKeyDown = useCallback((event) => {
     const { key } = event;
