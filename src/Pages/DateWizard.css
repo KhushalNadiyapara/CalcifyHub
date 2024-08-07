@@ -1,0 +1,85 @@
+.datewizard-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #282c34;
+}
+
+.datewizard-box {
+  display: flex;
+  gap: 20px;
+}
+
+.box {
+  background: #20232a;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  flex: 1;
+  animation: scaleIn 0.5s ease-in-out;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+label {
+  font-size: 1.2em;
+  color: #ffeba7;
+  display: block;
+  margin-bottom: 5px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  margin-top: 10px;
+  font-size: 1.2em;
+  color: white;
+  background: #1f2023;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.btn:hover {
+  background-color:#ffeba7;
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.9); }
+  to { transform: scale(1); }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .datewizard-box {
+      flex-direction: column;
+  }
+
+  .box {
+      padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  label {
+      font-size: 1em;
+  }
+
+  .btn {
+      padding: 10px;
+      font-size: 0.9em;
+  }
+}

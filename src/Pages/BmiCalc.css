@@ -1,0 +1,74 @@
+.body_BMI{
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #282c34;
+  /* background-image: url('D:/MERN PROJECTS/Projects_Web/calcifyhub/src/Assets/Sc_Background_2.svg');
+  background-repeat: no-repeat;
+  background-size: cover; */
+}
+
+.bmi-calculator {
+  background: #20232a;
+    width: 70vh;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+   
+    
+  }
+  
+  .bmi-calculator h1 {
+    margin-bottom: 20px;
+  }
+  
+  .input-group {
+    margin-bottom: 20px;
+  }
+  
+  .input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .input-group input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .button_bmi {
+    padding: 10px 20px;
+    color: #fff;
+    background: #1f2023;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .button_bmi:hover {
+    background-color:#ffeba7;
+    color:#282c34
+  }
+  
+  .result {
+    margin-top: 20px;
+  }
+  
+  .result h2 {
+    margin: 10px 0;
+  }
+  
+  .result p {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
