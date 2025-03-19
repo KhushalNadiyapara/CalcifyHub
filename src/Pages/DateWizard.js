@@ -24,19 +24,21 @@ const DateWizard = () => {
       const start = new Date(startDate);
       const result = new Date(start);
       result.setDate(result.getDate() + parseInt(daysToAdd));
-      setResultDate(result.toISOString().split('T')[0]);
+
+      // Format date as DD-MM-YYYY
+      const formattedDate = result.toLocaleDateString('en-GB'); // 'en-GB' gives DD/MM/YYYY format
+      setResultDate(formattedDate.replace(/\//g, '-')); // Replace / with -
     }
   };
 
   const findDayOfWeek = () => {
-    if (resultDate) { // Use resultDate instead of startDate
-        const [year, month, day] = resultDate.split('-').map(Number);
-        const date = new Date(year, month - 1, day); // Correctly parse date
-        const options = { weekday: 'long' };
-        setDayOfWeek(date.toLocaleDateString('en-US', options));
+    if (resultDate) {
+      const [day, month, year] = resultDate.split('-').map(Number);
+      const date = new Date(year, month - 1, day);
+      const options = { weekday: 'long' };
+      setDayOfWeek(date.toLocaleDateString('en-US', options));
     }
-};
-
+  };
 
   return (
     <div className="datewizard-container">
