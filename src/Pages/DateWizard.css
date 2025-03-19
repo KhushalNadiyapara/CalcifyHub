@@ -63,23 +63,58 @@ input {
 }
 
 /* Responsive Styles */
+/* General Mobile Styling */
+/* General Mobile Styling */
 @media (max-width: 768px) {
+  .datewizard-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      padding: 20px; /* Adds space to prevent touching edges */
+  }
+
   .datewizard-box {
+      display: flex;
       flex-direction: column;
+      align-items: center;
+      width: 100%;
+      max-width: 400px; /* Prevents stretching */
   }
 
   .box {
+      width: 100%;
+      max-width: 380px; /* Centers and maintains good width */
       padding: 20px;
+      margin: 10px auto; /* Adds vertical spacing */
+      text-align: center; /* Centers text content */
+  }
+
+  .btn, input {
+      font-size: 16px;
   }
 }
 
 @media (max-width: 480px) {
+  .datewizard-container {
+      padding-top: 60px; /* Pushes content down */
+      padding-left: 15px;
+      padding-right: 15px;
+  }
+
+  .box {
+      width: 100%;
+      max-width: 300px; /* Slightly smaller for compact screens */
+      padding: 12px;
+      margin: 10px auto; /* Ensures centered spacing */
+  }
+
   label {
-      font-size: 1em;
+      font-size: 1rem;
   }
 
   .btn {
       padding: 10px;
-      font-size: 0.9em;
+      font-size: 1rem;
   }
 }

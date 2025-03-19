@@ -29,12 +29,14 @@ const DateWizard = () => {
   };
 
   const findDayOfWeek = () => {
-    if (startDate) {
-      const start = new Date(startDate);
-      const options = { weekday: 'long' };
-      setDayOfWeek(start.toLocaleDateString('en-US', options));
+    if (resultDate) { // Use resultDate instead of startDate
+        const [year, month, day] = resultDate.split('-').map(Number);
+        const date = new Date(year, month - 1, day); // Correctly parse date
+        const options = { weekday: 'long' };
+        setDayOfWeek(date.toLocaleDateString('en-US', options));
     }
-  };
+};
+
 
   return (
     <div className="datewizard-container">

@@ -64,15 +64,15 @@ button:active {
 
 .equal {
   grid-column: span 2;
-  background: #c84335; /* Equal button color */
+  background: #e6cb73; /* Equal button color */
 }
 
 .equal:hover {
-  background: #ff6f61; /* Equal button hover color */
+  background: #e4bf48; /* Equal button hover color */
 }
 
 .equal:active {
-  background: #c0392b; /* Equal button active color */
+  background: #c0a652; /* Equal button active color */
 }
 
 .zero {
